@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { CollaboratorComponent } from '../pages/collaborator/collaborator.component';
+import { CollaboratorListComponent } from '../pages/collaborator-list/collaborator-list.component';
+import { CollaboratorRegisterComponent } from '../pages/collaborator-register/collaborator-register.component';
 
 export const LayoutRoutes: Routes = [
     {
@@ -9,6 +10,10 @@ export const LayoutRoutes: Routes = [
     },
     {
         path: 'registros',
-        component: CollaboratorComponent
+        component: CollaboratorListComponent
+    },
+    {
+        path: ':nome',
+        component: CollaboratorRegisterComponent
     },
 ];

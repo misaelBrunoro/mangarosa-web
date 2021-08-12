@@ -1,5 +1,11 @@
 .flex-box {
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content:center;
+  align-items:center;
+}
+
+.center {
+  width: 75%;
+  margin: 20px auto;
 }

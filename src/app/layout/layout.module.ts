@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CollaboratorComponent } from '../pages/collaborator/collaborator.component';
 import { LayoutRoutes } from './layout.routing';
 import { ComponentsModule } from '../components/components.module';
 import { MaterialModule } from '../material/material.module';
+import { CollaboratorRegisterComponent } from '../pages/collaborator-register/collaborator-register.component';
+import { CollaboratorListComponent } from '../pages/collaborator-list/collaborator-list.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { MaterialModule } from '../material/material.module';
     MaterialModule
   ],
   declarations: [
-    CollaboratorComponent
+    CollaboratorRegisterComponent,
+    CollaboratorListComponent
   ],
 })
 
