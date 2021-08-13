@@ -5,16 +5,41 @@
       <mat-grid-tile>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Nome</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+          <input matInput placeholder="Nome">
         </mat-form-field>
       </mat-grid-tile>
-      <mat-grid-tile>2</mat-grid-tile>
-      <mat-grid-tile>3</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+      </mat-grid-tile>
+      
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>CPF</mat-label>
+          <input matInput placeholder="CPF">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Telefone</mat-label>
+          <input matInput placeholder="Telefone">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Toppings</mat-label>
+          <mat-select [formControl]="knowledges" multiple>
+            <mat-option *ngFor="let knowledge of knowledgesArray" [value]="knowledge">{{knowledge}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
     </mat-grid-list>
-
-    
-
 
   </form>
 </mat-card>

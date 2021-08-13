@@ -12,6 +12,8 @@ export enum Validation {
   notValidated = 'notValidated',
 }
 
+export const KnowledgeArray = Object.values(Knowledge);
+
 export interface ICollaborator {
   id?: number;
   name: string;
