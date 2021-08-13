@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
   ],
   exports: [
     MatToolbarModule,
@@ -23,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
   ]
 })
 export class MaterialModule { }

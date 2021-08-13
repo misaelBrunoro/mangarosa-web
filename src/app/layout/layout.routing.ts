@@ -13,7 +13,7 @@ export const LayoutRoutes: Routes = [
         component: CollaboratorListComponent
     },
     {
-        path: ':nome',
+        path: ':nome/registrar',
         component: CollaboratorRegisterComponent
     },
 ];

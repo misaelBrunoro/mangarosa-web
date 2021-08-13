@@ -1,8 +1,20 @@
 <mat-card shadow>
   <form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
+    
+    <mat-grid-list cols="2" rowHeight="3:1">
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>2</mat-grid-tile>
+      <mat-grid-tile>3</mat-grid-tile>
+      <mat-grid-tile>4</mat-grid-tile>
+    </mat-grid-list>
+
+    
+
+
   </form>
 </mat-card>

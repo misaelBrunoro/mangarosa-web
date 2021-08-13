@@ -8,6 +8,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { ComponentsModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
+import { CollaboratorService } from './services/collaborator.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { LayoutModule } from './layout/layout.module';
     BrowserAnimationsModule,
     ComponentsModule,
     RouterModule,
-    LayoutModule
+    LayoutModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CollaboratorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

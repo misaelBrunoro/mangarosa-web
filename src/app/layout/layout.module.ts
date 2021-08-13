@@ -7,6 +7,7 @@ import { ComponentsModule } from '../components/components.module';
 import { MaterialModule } from '../material/material.module';
 import { CollaboratorRegisterComponent } from '../pages/collaborator-register/collaborator-register.component';
 import { CollaboratorListComponent } from '../pages/collaborator-list/collaborator-list.component';
+import { CollaboratorService } from '../services/collaborator.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import { CollaboratorListComponent } from '../pages/collaborator-list/collaborat
     CollaboratorRegisterComponent,
     CollaboratorListComponent
   ],
+  providers: [
+    CollaboratorService
+  ]
 })
 
 export class LayoutModule {}
