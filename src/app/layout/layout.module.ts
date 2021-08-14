@@ -8,6 +8,12 @@ import { MaterialModule } from '../material/material.module';
 import { CollaboratorRegisterComponent } from '../pages/collaborator-register/collaborator-register.component';
 import { CollaboratorListComponent } from '../pages/collaborator-list/collaborator-list.component';
 import { CollaboratorService } from '../services/collaborator.service';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { CpfPipe } from '../pages/pipes/cpf.pipe';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   imports: [
@@ -16,14 +22,16 @@ import { CollaboratorService } from '../services/collaborator.service';
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    MaterialModule
+    MaterialModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
   declarations: [
     CollaboratorRegisterComponent,
-    CollaboratorListComponent
+    CollaboratorListComponent,
   ],
   providers: [
-    CollaboratorService
+    CollaboratorService,
+    CpfPipe
   ]
 })
 

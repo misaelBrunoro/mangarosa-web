@@ -7,17 +7,23 @@ import { CollaboratorService } from 'src/app/services/collaborator.service';
 @Component({
   selector: 'app-collaborator-list',
   templateUrl: './collaborator-list.component.html',
-  styleUrls: ['./collaborator-list.component.scss']
+  styleUrls: ['./collaborator-list.component.scss'],
 })
 export class CollaboratorListComponent implements OnInit {
-  public displayedColumns: string[] = ["ID", "Nome", "Email", "CPF", "Telefone", "Validacao"];
+  public displayedColumns: string[] = [
+    'ID',
+    'Nome',
+    'Email',
+    'CPF',
+    'Telefone',
+    'Validacao',
+    'DataValidacao',
+  ];
   public dataSource = new MatTableDataSource<ICollaborator>([]);
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  constructor(
-    private collaboratorService: CollaboratorService
-  ) { }
+  constructor(private collaboratorService: CollaboratorService) {}
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -26,5 +32,4 @@ export class CollaboratorListComponent implements OnInit {
       this.dataSource.data = data;
     });
   }
-
 }

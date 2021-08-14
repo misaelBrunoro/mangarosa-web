@@ -1,44 +1,56 @@
 <mat-card shadow>
-  <form class="example-form">
-    
-    <mat-grid-list cols="2" rowHeight="3:1">
+  <form class="example-form" [formGroup]="registroForm" (ngSubmit)="onSubmitAdd()">
+
+    <h1>Cadastrar Colaborador</h1>
+
+    <mat-grid-list cols="3" rowHeight="3:1">
       <mat-grid-tile>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Nome</mat-label>
-          <input matInput placeholder="Nome">
+          <input matInput placeholder="Nome" formControlName="name" [readonly]="edit">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email">
+          <input matInput placeholder="Email" type="email" formControlName="email" [readonly]="edit">
         </mat-form-field>
       </mat-grid-tile>
       
       <mat-grid-tile>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>CPF</mat-label>
-          <input matInput placeholder="CPF">
+          <input matInput placeholder="CPF" formControlName="cpf" mask="000.000.000-00" [readonly]="edit">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Telefone</mat-label>
-          <input matInput placeholder="Telefone">
+          <input type="text" matInput placeholder="Telefone" formControlName="phone" mask="(00) 00000-0000" [readonly]="edit">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field appearance="fill">
-          <mat-label>Toppings</mat-label>
-          <mat-select [formControl]="knowledges" multiple>
-            <mat-option *ngFor="let knowledge of knowledgesArray" [value]="knowledge">{{knowledge}}</mat-option>
+          <mat-label>Conhecimentos</mat-label>
+          <mat-select formControlName="knowledge" multiple>
+            <mat-option  [disabled]="edit" *ngFor="let knowledge of knowledgesArray"
+                        [value]="knowledge">{{knowledge}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
 
+      <mat-grid-tile style="justify-content: center !important; ">
+        <button mat-flat-button
+                color="primary"
+                type="submit"
+                class="material-cust-medium-button">
+                {{edit ? 'Ativar' : 'Cadastrar'}}
+        </button>
+      </mat-grid-tile>
     </mat-grid-list>
 
   </form>

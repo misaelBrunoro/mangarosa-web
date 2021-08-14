@@ -4,16 +4,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { ICollaborator } from '../models/collaborator.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CollaboratorService {
-
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {}
 
   public show(id: string) {
-    return this._http.get<any>(environment.API_URL + '/collaborators', {
+    return this._http.get<any>(environment.API_URL + '/collaborators/' + id, {
       observe: 'body',
-      params: new HttpParams().append('id', id)
     });
   }
 
@@ -30,9 +28,17 @@ export class CollaboratorService {
   }
 
   public destroy(id: string) {
-    return this._http.delete<any>(environment.API_URL + '/disciplinas', {
+    return this._http.delete<any>(
+      environment.API_URL + '/collaborators/' + id,
+      {
+        observe: 'body',
+      }
+    );
+  }
+
+  public patch(id: string) {
+    return this._http.patch<any>(environment.API_URL + '/collaborators/' + id, {
       observe: 'body',
-      params: new HttpParams().append('id', id)
     });
   }
 }
