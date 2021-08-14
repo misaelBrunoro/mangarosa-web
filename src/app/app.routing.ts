@@ -1,20 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { CollaboratorComponent } from './pages/collaborator/collaborator.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'registros'
-  },
-  {
-    path: 'registros',
-    component: CollaboratorComponent,
-  },
-];
+const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, BrowserModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

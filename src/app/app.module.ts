@@ -3,24 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { TableComponent } from './components/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CollaboratorComponent } from './pages/collaborator/collaborator.component';
+import { LayoutComponent } from './layout/layout.component';
+import { ComponentsModule } from './components/components.module';
+import { RouterModule } from '@angular/router';
+import { LayoutModule } from './layout/layout.module';
+import { CollaboratorService } from './services/collaborator.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    TableComponent,
-    CollaboratorComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ComponentsModule,
+    RouterModule,
+    LayoutModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+    }),
   ],
-  providers: [],
+  providers: [CollaboratorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
